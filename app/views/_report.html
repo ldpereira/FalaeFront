@@ -1,0 +1,62 @@
+<div ng-controller="ReportCtrl as ctrl">
+	<script type="text/javascript" src="https://www.google.com/jsapi?sensor=false"></script>
+
+	<section class="content">
+		<div class="row">
+			<div class="col-md-12">
+				<a href="#/dashboard">Voltar</a>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="box box-info">
+				<div class="box-header with-border">
+					<h3 class="box-title">Informações</h3>
+				</div>
+				<div class="box-body">
+					<div class="table-responsive">
+						<table class="table no-margin">
+							<thead>
+								<tr>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<h3>Usuários / Grupo</h3>
+										<br>
+										<div id='chart_UsuariosGrupos' class="table-responsive" style="width: 900px; height: 300px;"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h3>Mensagens / Grupo</h3>
+										<br>
+										<div id='chart_MensagensGrupos' class="table-responsive" style="width: 900px; height: 500px;"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h3>Mensagens / Usuário</h3>
+										<br>
+										<div id='chart_MensagensUsuários' class="table-responsive" style="width: 900px; height: 500px;"></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

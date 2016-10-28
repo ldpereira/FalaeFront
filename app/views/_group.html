@@ -1,0 +1,96 @@
+<!-- Login -->
+<form name="formLogin" class="content form-horizontal" ng-controller="GroupCtrl as ctrl" >
+	<div class="row">
+		<div class="col-md-12">
+			<a href="#/mygroups">Voltar</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<div class="box box-info">
+				<div class="box-header with-border">
+					<h3 class="box-title">Cadastre o seu grupo</h3>
+				</div>
+				<!-- /.box-header -->
+				
+				<div class="box-body">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Nome</label>
+
+						<div class="col-sm-10">
+							<input class="form-control" 
+							placeholder="Informe o nome do grupo ..." 
+							ng-model="ctrl.myGroup.name"
+							required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Descrição</label>
+
+						<div class="col-sm-10">
+							<textarea class="form-control" rows="3" 
+							placeholder="Informe a descrição do grupo ..." 
+							ng-model="ctrl.myGroup.description"
+							required></textarea>
+						</div>
+					</div>
+				</div>
+				<!-- /.box-body -->
+				<div class="box-footer clearfix">
+					<button class="btn btn-info pull-left" type="button" ng-disabled="formLogin.$invalid" ng-click="ctrl.createGroup(ctrl.myGroup)" >Salvar</button>
+				</div>
+				<!-- /.box-footer -->
+			</div>
+		</div>
+		<!-- USERS BOX -->
+		<div class="col-md-4">
+			<div class="box box-info">
+				<div class="box-header with-border">
+					<h3 class="box-title">Selecione os usuários</h3>
+				</div>
+				<!-- /.box-header -->
+				<div class="box-body">
+					<div class="table-responsive">
+						<table class="table no-margin">
+							<thead>
+								<tr>
+									<th></th>
+									<th>Usuário</th>
+									<th>Votos</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="user in ctrl.users">
+									<td><input type="checkbox" ng-model="user.select"></td>
+									<td>{{ user.User.username }}</td>
+									<td>{{ user.User.rating }}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- /.table-responsive -->
+				</div>
+				<!-- /.box-body -->
+				<div class="box-footer clearfix">
+					
+				</div>
+				<!-- /.box-footer -->
+			</div>
+		</div>
+		<!-- /.USERS BOX -->			
+	</div>
+	<div class="row">
+		<div class="col-md-12" ng-show="ctrl.errorMessage">
+			<div class="callout callout-danger">
+				<h4>Error!</h4>
+				<p>{{ctrl.errorMessage}}</p>
+			</div>
+		</div>		
+		<div class="col-md-12" ng-show="ctrl.mensagem">
+			<div class="callout callout-success">
+				<h4>Sucess!</h4>
+				<p>{{ctrl.mensagem}}</p>
+			</div>
+		</div>				
+	</div>
+</form>

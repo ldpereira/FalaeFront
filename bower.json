@@ -1,0 +1,16 @@
+{
+  "name": "chat-redes",
+  "description": "chat red",
+  "main": "index.js",
+  "authors": [
+    "lucasdalcolpereira"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/lucasdalcolpereira/FalaeFront",
+  "devDependencies": {
+    "angular": "^1.5.5",
+    "AdminLTE": "admin-lte#^2.3.3",
+    "bootstrap": "^3.3.6",
+    "angular-route": "^1.5.6"
+  }
+}

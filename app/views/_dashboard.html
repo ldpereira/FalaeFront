@@ -1,0 +1,60 @@
+<!-- Main content -->
+<div ng-controller="DashBoardCtrl as ctrl">
+	<section class="content">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box box-info">
+					<div class="box-header with-border">
+						<h3 class="box-title">Opções</h3>
+					</div>				
+					<div class="box-footer clearfix">
+						<button class="btn btn-info" ng-click="ctrl.myGroups()">Meus grupos</button>
+						<button class="btn btn-info" ng-click="ctrl.relatorios()">Relatórios</button>
+					</div>
+				</div> 
+			</div>
+			<!-- /.GROUPS BOX -->	
+
+			<!-- GROUPS BOX -->
+			<div class="col-md-12">
+				<div class="box box-info">
+					<div class="box-header with-border">
+						<h3 class="box-title">Grupos</h3>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body" ng-repeat="group in ctrl.groups">
+						<div class="btn-group-vertical col-md-1" ng-disabled="group.block">
+							<button type="button" class="btn btn-info" ng-click="group.rating = group.rating + 1">
+								<span class="glyphicon glyphicon-menu-up"></span>
+							</button>                      
+							<button type="button" class="btn btn-info" ng-model="group.rating" ng-change="group.block = true"><span>{{ group.rating }}</span></button>                      
+							<button type="button" class="btn btn-info" ng-click="group.rating = group.rating - 1">
+								<span class="glyphicon glyphicon-menu-down"></span>
+							</button>
+		                </div>						
+						<div class="col-md-9">							
+							<div class="info-box">
+								<a href="#/chat/{{group.id}}">									
+									<span class="info-box-icon bg-aqua"><i class="fa fa-comments-o"></i></span>
+								</a>
+
+								<div class="info-box-content">
+									<span class="info-box-text">{{ group.title }}</span>
+									<p class="">{{ 'fundado por ' + group.userCreate }}</p>
+									<p class="">{{ group.description }}</p>
+								</div>
+								<!-- /.info-box-content -->
+							</div>
+						</div>
+					</div>
+					<!-- /.box-body -->
+					<div class="box-footer clearfix">
+						<a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Groups</a>
+					</div>
+					<!-- /.box-footer -->
+				</div>
+			</div>
+			<!-- /.GROUPS BOX -->							
+		</div>
+	</section>
+</div>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Falaê</title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!--build:css css/styles.min.css-->
+	<link rel="stylesheet" href="vendor/adminLTE/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="vendor/adminLTE/dist/css/AdminLTE.css">
+	<link rel="stylesheet" href="vendor/adminLTE/dist/css/skins/skin-blue.css">
+	<!--endbuild-->
+</head>
+
+<body ng-app="myApp" class="skin-blue layout-top-nav">
+	<div class="wrapper">
+		<header class="main-header">
+			<!-- TOP NAVBAR -->
+			<nav class="navbar navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<a href="index.html" class="navbar-brand"><b>Falaê</b>Fórum</a>
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+					</div>
+
+					<!-- Navbar Right Menu -->
+					<div class="navbar-custom-menu">
+						<ul class="nav navbar-nav">
+							<li class="dropdown user user-menu open">
+								<!-- Menu Toggle Button -->
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+									<!-- The user image in the navbar-->
+									<img src="images/user1-128x128.jpg" class="user-image" alt="User Image">
+									<!--<img class="user-image" ng-src="/images/{{ lctrl.username }}.jpg" alt="{{ lctrl.username }}">
+									<!-- hidden-xs hides the username on small devices so only the image appears. -->
+									<span class="hidden-xs">User</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- /.navbar-custom-menu -->
+				</div>
+				<!-- /.container-fluid -->
+			</nav>
+		</header>
+		<!-- Full Width Column -->
+		<div class="content-wrapper" style="min-height: 523px;">
+			<div class="container">
+				<!-- Content Header (Page header) -->
+				<section class="content-header">
+					<h1>
+						Falaê
+					</h1>
+				</section>
+
+				<div ng-view></div>
+			</div>
+		</div>
+		<!-- /.content-wrapper -->
+
+		<footer class="main-footer">
+			<div class="container">
+				<span class="hidden-xs">by Lucas Pereira | Alexander | Gabriel </span>
+				<div class="pull-right hidden-xs">
+					Version 1.0
+				</div>
+			</div>
+			<!-- /.container -->
+		</footer>
+	</div>
+	<!-- ./wrapper -->
+
+	<!-- build:js js/main.min.js -->
+	<script src="vendor/adminLTE/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+	<script src="vendor/adminLTE/bootstrap/js/bootstrap.js"></script>
+	<script src="vendor/angular/angular.js"></script>
+	<script src="vendor/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi?sensor=false"></script>
+	<script src="app.js"></script>	
+	<script src="js/_services.js"></script>
+	<script src="js/_controllers.js"></script>	
+	<!-- endbuild -->
+
+</body>
+
+</html>

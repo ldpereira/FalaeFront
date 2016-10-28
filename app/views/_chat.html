@@ -1,0 +1,153 @@
+<div class="row">
+	<div class="col-md-12">
+		<a href="#/dashboard">Voltar</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-8">
+		<!-- DIRECT CHAT PRIMARY -->
+		<div class="box box-primary direct-chat direct-chat-primary" ng-controller="ChatCtrl as ctrl">
+			<div class="box-header with-border">
+				<h3 class="box-title">Direct Chat</h3>
+
+				<div class="box-tools pull-right">
+					<!--<span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>-->
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-widget="chat-pane-toggle" data-original-title="Contacts">
+						<i class="fa fa-comments"></i></button>
+					<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+				</div>
+			</div>
+			<div class="box-body">
+				<!-- Conversations are loaded here -->
+				<div class="direct-chat-messages" ng-repeat="message in ctrl.messages">
+					<!-- Message. Default to the left -->
+					<div class="direct-chat-msg" ng-if="message.username == ctrl.user">
+						<div class="direct-chat-info clearfix">
+							<span class="direct-chat-name pull-left">{{ message.username }}</span>
+							<span class="direct-chat-timestamp pull-right">{{ message.date }}</span>
+						</div>
+						<img class="direct-chat-img" ng-src="../images/{{ message.username }}.jpg" alt="{{ message.username }}">
+						<!-- /.direct-chat-img -->
+						<div class="direct-chat-text">{{ message.textMessage }}</div>
+					</div>
+
+					<!-- Message to the right -->
+					<div class="direct-chat-msg right" ng-if="message.username != ctrl.user">
+						<div class="direct-chat-info clearfix">
+							<span class="direct-chat-name pull-right">{{ message.username }}</span>
+							<span class="direct-chat-timestamp pull-left">{{ message.date }}</span>
+						</div>
+						<img class="direct-chat-img" ng-src="../images/{{ message.username }}.jpg" alt="{{ message.username }}">
+						<!-- /.direct-chat-img -->
+						<div class="direct-chat-text">{{ message.textMessage }}</div>
+					</div>
+				</div>
+
+				<!-- Contacts are loaded here -->
+				<!--<div class="direct-chat-contacts">
+					<ul class="contacts-list" ng-repeat="contact in ctrl.contacts">
+						<li>
+							<a href="#">
+								<img class="contacts-list-img" ng-src="../images/{{ contact.name }}.jpg" alt="User Image">
+
+								<div class="contacts-list-info">
+									<span class="contacts-list-name">
+											{{ contact.name }}
+											<small class="contacts-list-date pull-right">{{ contact.date }}</small>
+										</span>
+									<span class="contacts-list-msg">{{ contact.message }}</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>-->
+			</div>
+			<!-- /.box-body -->
+			<div class="box-footer">
+				<form name="formChat">
+					<div class="input-group">
+						<input type="text" name="message" placeholder="Digite uma mensagem..." class="form-control" ng-model="ctrl.chat.message">
+						<span class="input-group-btn">
+								<button type="submit" 
+									class="btn btn-primary btn-flat"
+									ng-click="ctrl.sendMessage(ctrl.chat.message)">Send</button>
+							</span>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-4" style="display:none">
+		<!-- Widget: user widget style 1 -->
+		<div class="box box-widget widget-user">
+			<!-- Add the bg color to the header using any of the bg-* classes -->
+			<div class="widget-user-header bg-black" style="background: url('../images/photo1.png') center center;">
+				<h3 class="widget-user-username">Elizabeth Pierce</h3>
+				<h5 class="widget-user-desc">Web Designer</h5>
+			</div>
+			<div class="widget-user-image">
+				<img class="img-circle" src="../images/user3-128x128.jpg" alt="User Avatar">
+			</div>
+			<div class="box-footer">
+				<div class="row">
+					<div class="col-sm-4 border-right">
+						<div class="description-block">
+							<h5 class="description-header">3,200</h5>
+							<span class="description-text">SALES</span>
+						</div>
+					</div>
+					<div class="col-sm-4 border-right">
+						<div class="description-block">
+							<h5 class="description-header">13,000</h5>
+							<span class="description-text">FOLLOWERS</span>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="description-block">
+							<h5 class="description-header">35</h5>
+							<span class="description-text">PRODUCTS</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4" style="display:none">
+		<!-- Widget: user widget style 1 -->
+		<div class="box box-widget widget-user">
+			<!-- Add the bg color to the header using any of the bg-* classes -->
+			<div class="widget-user-header bg-aqua-active">
+				<h3 class="widget-user-username">Alexander Pierce</h3>
+				<h5 class="widget-user-desc">Founder &amp; CEO</h5>
+			</div>
+			<div class="widget-user-image">
+				<img class="img-circle" src="../images/user1-128x128.jpg" alt="User Avatar">
+			</div>
+			<div class="box-footer">
+				<div class="row">
+					<div class="col-sm-4 border-right">
+						<div class="description-block">
+							<h5 class="description-header">3,200</h5>
+							<span class="description-text">SALES</span>
+						</div>
+					</div>
+					<div class="col-sm-4 border-right">
+						<div class="description-block">
+							<h5 class="description-header">13,000</h5>
+							<span class="description-text">FOLLOWERS</span>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="description-block">
+							<h5 class="description-header">35</h5>
+							<span class="description-text">PRODUCTS</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

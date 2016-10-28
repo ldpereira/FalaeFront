@@ -1,0 +1,70 @@
+<!-- Main content -->
+<div ng-controller="MyGroupsCtrl as ctrl">
+	<section class="content">
+		<div class="row">
+			<div class="col-md-12">
+			<a href="#/dashboard">Voltar</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box box-info">
+					<div class="box-header with-border">
+						<h3 class="box-title">Opções</h3>
+					</div>				
+					<div class="box-footer clearfix">
+						<button class="btn btn-info" ng-click="ctrl.createGroup()">Criar grupo</button>
+						<button class="btn btn-info" ng-click="ctrl.deleteGroups()">Deletar grupo</button>
+					</div>
+				</div>
+			</div>
+			<!-- /.GROUPS BOX -->	
+
+			<!-- GROUPS BOX -->
+			<div class="col-md-12">
+				<div class="box box-info">
+					<div class="box-header with-border">
+						<h3 class="box-title">Grupos</h3>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<div class="table-responsive">
+							<table class="table no-margin">
+								<thead>
+									<tr>
+										<th>Selec</th>
+										<th>Votos</th>
+										<th>Título</th>
+										<th>Descrição</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="group in ctrl.groups">
+										<td><input type="checkbox" ng-model="group.select"></td>
+										<td>{{ group.rating }}</td>
+										<td>{{ group.title }}</td>
+										<td>{{ group.description }}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- /.box-body -->
+					<div class="box-footer clearfix">
+						<a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Groups</a>
+					</div>
+					<!-- /.box-footer -->
+				</div>
+			</div>
+			<!-- /.GROUPS BOX -->							
+		</div>
+		<div class="row">
+			<div class="col-md-12" ng-show="ctrl.mensagem">
+				<div class="callout callout-success">
+					<h4>Sucess!</h4>
+					<p>{{ctrl.mensagem}}</p>
+				</div>
+			</div>		
+		</div>		
+	</section>
+</div>
